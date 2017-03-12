@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.19" />
+  <meta name="author" content="Rahul Pathak">
+  <meta name="description" content="Software Engineer">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://rahulpathakgit.github.io/index.xml" type="application/rss+xml" title="Rahul Pathak Blog">
+  <link rel="feed" href="http://rahulpathakgit.github.io/index.xml" type="application/rss+xml" title="Rahul Pathak Blog">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://rahulpathakgit.github.io/2016/11/06/gstreamer-pipelines/">
+
+  
+
+  <title>Important Gstreamer Pipelines | Rahul Pathak Blog</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Rahul Pathak Blog</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">Important Gstreamer Pipelines</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2016-11-06 22:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Sun, Nov 6, 2016
+    </time>
+  </span>
+
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2frahulpathakgit.github.io%2f2016%2f11%2f06%2fgstreamer-pipelines%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Important%20Gstreamer%20Pipelines&amp;url=http%3a%2f%2frahulpathakgit.github.io%2f2016%2f11%2f06%2fgstreamer-pipelines%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2frahulpathakgit.github.io%2f2016%2f11%2f06%2fgstreamer-pipelines%2f&amp;title=Important%20Gstreamer%20Pipelines"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2frahulpathakgit.github.io%2f2016%2f11%2f06%2fgstreamer-pipelines%2f&amp;title=Important%20Gstreamer%20Pipelines"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Important%20Gstreamer%20Pipelines&amp;body=http%3a%2f%2frahulpathakgit.github.io%2f2016%2f11%2f06%2fgstreamer-pipelines%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h3 id="gstreamer-pipelines">Gstreamer pipelines</h3>
+
+<p>Richard Phillips Feynman (/ˈfaɪnmən/; May 11, 1918 – February 15, 1988) was an American theoretical physicist known for his work in the path integral formulation of quantum mechanics, the theory of quantum electrodynamics, and the physics of the superfluidity of supercooled liquid helium, as well as in particle physics for which he proposed the parton model. For his contributions to the development of quantum electrodynamics, Feynman, jointly with Julian Schwinger and Sin-Itiro Tomonaga, received the Nobel Prize in Physics in 1965.
+Feynman developed a widely used pictorial representation scheme for the mathematical expressions governing the behavior of subatomic particles, which later became known as Feynman diagrams. During his lifetime, Feynman became one of the best-known scientists in the world. In a 1999 poll of 130 leading physicists worldwide by the British journal Physics World he was ranked as one of the ten greatest physicists of all time.[1]
+He assisted in the development of the atomic bomb during World War II and became known to a wide public in the 1980s as a member of the Rogers Commission, the panel that investigated the Space Shuttle Challenger disaster. In addition to his work in theoretical physics, Feynman has been credited with pioneering the field of quantum computing, and introducing the concept of nanotechnology. He held the Richard C. Tolman professorship in theoretical physics at the California Institute of Technology.
+Feynman was a keen popularizer of physics through both books and lectures, including a 1959 talk on top-down nanotechnology called There&rsquo;s Plenty of Room at the Bottom, and the three-volume publication of his undergraduate lectures, The Feynman Lectures on Physics. Feynman also became known through his semi-autobiographical books Surely You&rsquo;re Joking, Mr. Feynman! and What Do You Care What Other People Think? and books written about him, such as Tuva or Bust! and Genius: The Life and Science of Richard Feynman by James Gleick.</p>
+
+<ul>
+<li>mp3 playback</li>
+</ul>
+
+<pre><code>gst-launch filesrc location=&lt;file path&gt; ! mp3parse ! ffdec_mp3 ! audioconvert ! alsasink device=plug:default &gt; /dev/null
+</code></pre>
+
+<ul>
+<li>Streaming from SHoutcast streaming url</li>
+</ul>
+
+<pre><code>gst-launch souphttpsrc location=&lt;streaming url&gt; ! mp3parse ! ffdec_mp3 ! audioconvert ! audioresample ! alsasink device=plug:default &gt; /dev/null 
+</code></pre>
+
+<ul>
+<li>Parsing SHoutcast ICY metadata</li>
+</ul>
+
+<pre><code>gst-launch souphttpsrc location=&lt;streaming url&gt; iradio-mode=true ! icydemux ! fakesink -t
+</code></pre>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://rahulpathakgit.github.io/post/widgets/"><span
+      aria-hidden="true">&larr;</span> Customizing the homepage with widgets</a></li>
+    
+
+    
+    <li class="next"><a href="http://rahulpathakgit.github.io/post/rnn/">Deep Learning Through Recurrent Neural Networks <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rahulpathakml';
+    var disqus_identifier = 'http:\/\/rahulpathakgit.github.io\/2016\/11\/06\/gstreamer-pipelines\/';
+    var disqus_title = 'Important Gstreamer Pipelines';
+    var disqus_url = 'http:\/\/rahulpathakgit.github.io\/2016\/11\/06\/gstreamer-pipelines\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2016 Your Name &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+  
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+  
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+
+
+  </body>
+</html>
+
